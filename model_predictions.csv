@@ -1,0 +1,6 @@
+input_text,true_label,predicted_label
+road marking at the roundabout has faded and is hard to see at night.                               ,road,safety
+blocked culvert causing water to back up along the roadside.                                        ,water,water
+cracked glass at the shelter is hazardous to the public.                                            ,safety,waste
+handrail on pedestrian bridge is loose.                                                             ,safety,road
+large branch hanging over footpath looks like it may fall.                                          ,safety,road
