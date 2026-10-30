@@ -6,7 +6,11 @@ Python version: Python 3.10.2
 Model.joblib
 Vectorizer.joblib
 
-API End Points: 
-Predict
-Health
-Categories
+The API EndPoints are: 
+• Predict
+• Health
+• Categories
+
+Steps to run Model
+• load Model and Vectorizer from disk
+• run load_dataset.py
