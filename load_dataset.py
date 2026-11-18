@@ -5,11 +5,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 import joblib
+from pathlib import Path
 
 
-
+#####################################################################################################
+#data Engineering
 #loading the provided dataset into a pandas dataframe
-df = pd.read_csv('/Users/matthewrothera/Downloads/BCIT601_starter_service_requests_dataset.csv')
+raw_data_path = Path(__file__).resolve().parent.parent / "data" / "raw" /"BCIT601_starter_service_requests_dataset.csv"
+df = pd.read_csv(raw_data_path)
 pd.set_option('display.max_rows', None)
 
 df['request_text'] = df['request_text'].str.lower()
@@ -42,7 +45,8 @@ test_state = 45
 X_train, X_test, y_train, y_test = train_test_split(
  X, y,
     test_size= test_data_split,
-    random_state= test_state
+    random_state=test_state,
+    stratify=y
 )
 
 
@@ -79,19 +83,3 @@ results.head(5).to_csv("model_predictions.csv", index=False)
 #saving the model and vectorizer to disk
 joblib.dump(model, "model.joblib")
 joblib.dump(vectorizer, "vectorizer.joblib")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
